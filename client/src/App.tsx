@@ -3,8 +3,8 @@ import TaskCard from "./components/TaskCard";
 import "./App.css";
 import { TaskCardProps } from "./types/types";
 import { statuses } from "./types/types";
-import TailwindLearning from "./components/TailwindLearning";
-import TailwindLearningList from "./components/TailwindLearning.List";
+import Modal from "./components/ui/Modal/Modal";
+import useModal from "./hooks/useModal";
 
 const taskCards: TaskCardProps[] = [
   { id: "a1", title: "some title", points: 3, status: "todo" },
@@ -20,6 +20,8 @@ const taskCards: TaskCardProps[] = [
 ];
 
 function App() {
+  const modalProps = useModal();
+
   const columns = statuses.map((status) => {
     const taskInColumn = taskCards.filter((task) => task.status === status);
     return {
@@ -43,8 +45,23 @@ function App() {
           </div>
         ))}
       </div> */}
-      <TailwindLearning />
-      <TailwindLearningList />
+      {/* <TailwindLearning /> */}
+      {/* <TailwindLearningList /> */}
+      {/* <h1 className="px-10 py-10 font-semibold">Hello</h1> */}
+
+      <body className="flex flex-col min-h-[130vh]">
+        <div className="mt-12 px-10">
+          <h1 className="text-center">My posts here</h1>
+          <button
+            className="my-4 bg-brand px-2 py-2 rounded-md"
+            onClick={modalProps.onOpen}
+          >
+            Open modal
+          </button>
+        </div>
+
+        <Modal {...modalProps}>hello</Modal>
+      </body>
     </>
   );
 }
