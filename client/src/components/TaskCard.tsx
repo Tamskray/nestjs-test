@@ -1,6 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
+import { TaskCardProps } from "../types/types";
 
-const TaskCard = ({ title, id, points }) => {
+const TaskCard: FC<TaskCardProps> = ({ title, id, points }) => {
   return (
     <div className="border rounded-lg px-2 m-2 bg-gray-50">
       <div className="text-4xl font-bold py-2">{title}</div>

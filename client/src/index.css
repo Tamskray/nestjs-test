@@ -70,3 +70,21 @@ button:focus-visible {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply inline-block px-5 py-3 rounded-lg focus:outline-none focus:ring
+    text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
+  }
+
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-500
+    hover:-translate-y-0.5 transform transition focus:outline-none focus:ring
+    active:bg-red-700 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-300 hover:bg-gray-200
+    first-line:focus:outline-none focus:ring active:bg-gray-400 text-gray-800;
+  }
+}
