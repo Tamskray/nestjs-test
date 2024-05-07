@@ -5,6 +5,7 @@ import { TaskCardProps } from "./types/types";
 import { statuses } from "./types/types";
 import Modal from "./components/ui/Modal/Modal";
 import useModal from "./hooks/useModal";
+import TailwindLearning from "./components/TailwindLearning";
 
 const taskCards: TaskCardProps[] = [
   { id: "a1", title: "some title", points: 3, status: "todo" },
@@ -61,6 +62,15 @@ function App() {
         </div>
 
         <Modal {...modalProps}>hello</Modal>
+
+        <TailwindLearning />
+
+        <button
+          className="my-4 bg-brand px-2 py-2 rounded-md"
+          onClick={modalProps.onOpen}
+        >
+          Modaaaal
+        </button>
       </body>
     </>
   );
